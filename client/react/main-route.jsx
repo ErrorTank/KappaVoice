@@ -10,13 +10,16 @@ export class MainRoute extends KappaComponent {
     };
 
     render() {
+        let {themeType} = this.props;
         return (
             <div id="main-route">
-                <BrowserRouter>
-                    <Switch>
-                        <Route path="/" component={WelcomeRoute} exact/>
-                    </Switch>
-                </BrowserRouter>
+                <div className={`init-bg bg-${themeType}`}>
+                    <BrowserRouter>
+                        <Switch>
+                            <Route path="/" component={WelcomeRoute} exact/>
+                        </Switch>
+                    </BrowserRouter>
+                </div>
             </div>
         );
     }
