@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 export class Logo extends React.Component{
     constructor(props){
@@ -9,10 +10,15 @@ export class Logo extends React.Component{
     render(){
         let {brandName, size} = this.props;
         return(
-            <div className={`logo logo-${size}`}>
-                <img src="./assets/img/creepy-ghost.png"/>
-                {brandName ? "KappaVoice" : ""}
-            </div>
+            <Link
+                to="/"
+                className="disable-a-behavior logo-wrap"
+            >
+                <div className={`logo logo-${size}`}>
+                    <img src="./assets/img/creepy-ghost.png"/>
+                    <span className="brand-name">{brandName ? "KappaVoice" : ""}</span>
+                </div>
+            </Link>
         );
     }
 }
