@@ -1,8 +1,8 @@
-deepblack=#1d1d1d
+
 
 .main-nav{
   height 65px
-  background-color white
+
   .right-side{
     flex-grow 1
     margin-left 300px
@@ -11,69 +11,12 @@ deepblack=#1d1d1d
     .separate{
       width 2px
       height 20px
-      background-color deepblack
+
       margin 0 15px
     }
-    .show-icon{
-      color deepblack
-      font-size sm
-    }
-    .show-icon{
-      position relative
-      margin-left 6px
-      padding-bottom 3px
-      width 12px
-      .icon{
-        position absolute
-        top 50%
-        left 50%
-        transform translate(-50%, -50%)
-      }
-      .icon-enter {
-        opacity: 0;
-        &.isShow{
-          transform translate(-50%,-100%);
-        }
-        &.isHide{
-          transform translate(-50%,0);
-        }
-      }
 
-      .icon-enter-active {
-        opacity: 1;
-        transition: all 0.2s linear;
-        &.isShow{
-          transform translate(-50%, -50%)
-        }
-        &.isHide{
-          transform translate(-50%, -50%);
-        }
-      }
 
-      .icon-exit {
-        opacity  1
 
-      }
-
-      .icon-exit-active {
-        opacity: 0;
-        transition: all 0.2s linear;
-        &.isShow{
-          transform translate(-50%,-100%);
-        }
-        &.isHide{
-          transform translate(-50%,0);
-        }
-      }
-    }
-    .lgp-wrap{
-      position relative
-      .lp-btn{
-        font-size lg + 0.2rem
-        cursor pointer
-        color deepblack
-      }
-    }
     .login-btn{
 
       button{
@@ -81,12 +24,27 @@ deepblack=#1d1d1d
         font-size sm - 0.2rem
         padding 5px 15px
         text-align center
-        border 2px solid deepblack
+        border 2px solid
         border-radius 20px
-        color #1d1d1d
-        background-color white
+
+
         font-weight 550
         setTransition(0.2s)
+
+      }
+    }
+  }
+  &.dark-light{
+    background-color white
+    .separate{
+      background-color deepblack
+
+    }
+    .login-btn{
+      button{
+        border-color deepblack
+        color #1d1d1d
+        background-color white
         &:hover{
           background-color deepblack
           color white
@@ -94,5 +52,22 @@ deepblack=#1d1d1d
       }
     }
   }
-
+  &.sky{
+    background-color primary
+    .separate{
+      background-color white
+    }
+    .login-btn{
+      button{
+        border-color white
+        color white
+        background-color primary
+        margin-right 20px
+        &:hover{
+          background-color white
+          color primary
+        }
+      }
+    }
+  }
 }

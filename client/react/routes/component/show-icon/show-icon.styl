@@ -1,0 +1,55 @@
+.show-icon{
+  &.dark-light{
+    color deepblack
+  }
+  &.sky{
+    color white
+  }
+  font-size sm
+  position relative
+  margin-left 6px
+  padding-bottom 3px
+  width 12px
+  .icon {
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+  }
+  .icon-enter {
+    opacity: 0;
+    &.isShow {
+      transform translate(-50%, -100%);
+    }
+    &.isHide {
+      transform translate(-50%, 0);
+    }
+  }
+
+  .icon-enter-active {
+    opacity: 1;
+    transition: all 0.2s linear;
+    &.isShow {
+      transform translate(-50%, -50%)
+    }
+    &.isHide {
+      transform translate(-50%, -50%);
+    }
+  }
+
+  .icon-exit {
+    opacity 1
+
+  }
+
+  .icon-exit-active {
+    opacity: 0;
+    transition: all 0.2s linear;
+    &.isShow {
+      transform translate(-50%, -100%);
+    }
+    &.isHide {
+      transform translate(-50%, 0);
+    }
+  }
+}

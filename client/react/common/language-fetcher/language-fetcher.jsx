@@ -3,7 +3,7 @@ import {langApiList} from "../../../api/common/third-party/languages-api";
 import {KappaComponent} from "../kappa-component/kappa-component";
 
 
-export class LanguagePicker extends KappaComponent {
+export class LanguageFetcher extends KappaComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -18,16 +18,15 @@ export class LanguagePicker extends KappaComponent {
 
     fetchStateData = async (langs = []) => {
         let fetchCountriesInfo = langApiList.getByCountries(langs);
-        return await fetchCountriesInfo(["flag","languages"]);
+        return await fetchCountriesInfo(["flag", "languages"]);
     };
 
     render() {
-        let {btnShape, isOpen} = this.props;
+        let {listShape} = this.props;
         let {list} = this.state;
-        console.log(list)
         return (
             <Fragment>
-                {btnShape}
+                {listShape(list)}
             </Fragment>
         );
     }

@@ -6,7 +6,10 @@ let addStyle = (elem, styleList) => {
         elem.style[prop] = val;
     })
 };
-
+let addClass = (elem, classList) => {
+  classList.forEach(cl => elem.className += ` ${cl}`)
+};
 export {
-    addStyle
+    addStyle,
+    addClass
 }

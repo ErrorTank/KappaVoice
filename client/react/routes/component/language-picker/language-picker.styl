@@ -1,0 +1,81 @@
+
+.lgp-wrap {
+  position relative
+  display flex
+  cursor pointer
+  &.dark-light{
+
+    .lp-btn{
+      color deepblack
+    }
+    .language-picker{
+      background-color white
+      border-color grey
+      .each-lang{
+        &:hover {
+          background-color darken(white, 5%)
+        }
+        .name{
+          color deepblack
+        }
+      }
+    }
+  }
+  &.sky{
+
+    .lp-btn{
+      color white
+    }
+    .language-picker{
+      background-color white
+      border-color grey
+      .each-lang{
+        &:hover {
+          background-color darken(white, 5%)
+        }
+        .name{
+          color primary
+        }
+      }
+    }
+  }
+
+  .lp-btn {
+    font-size lg + 0.2rem
+
+  }
+  .language-picker {
+
+    z-index 10
+    border-radius 5px
+    position absolute
+    right 0
+    overflow hidden
+    top 100%
+    border 1px solid
+    .each-lang {
+      padding 10px 12px
+      cursor pointer
+      width 162px
+      setTransition(0.1s)
+
+      overflow hidden
+      .flag {
+        vertical-align middle
+        display inline-block
+        img {
+          width 30px
+        }
+      }
+      .name {
+        vertical-align middle
+        display inline-block
+
+        font-weight 550
+        font-size sm - 0.2rem
+        margin-left 10px
+        white-space nowrap
+      }
+    }
+  }
+}
