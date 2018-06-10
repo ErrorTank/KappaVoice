@@ -15,7 +15,6 @@ export class WithMainNav extends React.Component {
 
     render() {
         let curTheme = themeServices.getTheme();
-
         return (
             <div className="with-nav-window">
                 <div className={`main-nav ${curTheme}`}>

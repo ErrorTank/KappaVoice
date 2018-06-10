@@ -1,6 +1,40 @@
 .tp-wrap{
-  margin-left 15px
-  display flex
-  position relative
-  cursor pointer
+  .tp-btn{
+    padding 8px 0
+  }
+
 }
+
+.themes-list{
+  top 100%
+  width 162px
+  left 50%
+  transform translateX(-50%)
+  .theme {
+    display flex
+
+    &:hover{
+      .name{
+        color white
+      }
+    }
+    .box {
+      vertical-align middle
+      display inline-block
+      img {
+        width 30px
+      }
+    }
+    .name {
+      vertical-align middle
+      display inline-block
+      color deepblack
+      font-weight 550
+      font-size sm - 0.2rem
+      margin-left 10px
+      white-space nowrap
+    }
+  }
+
+}
+

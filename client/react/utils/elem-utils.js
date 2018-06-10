@@ -8,8 +8,12 @@ let addStyle = (elem, styleList) => {
 };
 let addClass = (elem, classList) => {
   classList.forEach(cl => elem.className += ` ${cl}`)
+}
+let replaceClass = (elem, classList) => {
+    classList.forEach(cl => elem.className = `${cl}`)
 };
 export {
     addStyle,
-    addClass
+    addClass,
+    replaceClass
 }

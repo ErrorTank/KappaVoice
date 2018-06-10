@@ -22,11 +22,11 @@ export class LanguageFetcher extends KappaComponent {
     };
 
     render() {
-        let {listShape} = this.props;
+        let {render} = this.props;
         let {list} = this.state;
         return (
             <Fragment>
-                {listShape(list)}
+                {render(list)}
             </Fragment>
         );
     }

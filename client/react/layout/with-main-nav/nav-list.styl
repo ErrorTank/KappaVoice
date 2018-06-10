@@ -1,0 +1,43 @@
+.picker-wrap{
+  margin-left 15px
+  display flex
+  position relative
+  cursor pointer
+  &.dark-light{
+
+    .picker-toggle{
+      color deepblack
+    }
+
+  }
+  &.sky{
+
+    .picker-toggle{
+      color white
+    }
+
+  }
+  .picker-list{
+    position absolute
+    z-index 1000
+    background-color darken(white, 5%)
+    overflow hidden
+    .picker-item {
+      padding 10px 12px
+      &:hover {
+        background-color #36393e
+      }
+      cursor pointer
+      border-left 3px solid transparent
+      setTransition(0.1s)
+      overflow hidden
+      &.active{
+        border-left-color #1d9ea5
+      }
+    }
+
+  }
+}
+
+
+
