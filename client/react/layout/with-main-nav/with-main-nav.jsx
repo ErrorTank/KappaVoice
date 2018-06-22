@@ -1,11 +1,21 @@
 import React, {Fragment} from "react";
 import {Logo} from "../../common/logo/logo";
 import {LanguagePicker} from "../../routes/component/language-picker/language-picker";
-import {allLangs} from "../../common/language-fetcher/all-langs";
+import {allLangs, langServices} from "../../services/lang/lang";
 import {allThemes, themeServices} from "../../services/theme/theme-services";
 import {ThemePicker} from "../../routes/component/theme-picker/theme-picker";
+import {translator} from "../../utils/translator";
 
 
+let initLang = translator([
+    {
+        name: "btnContent",
+        lang: {
+            us: "Login",
+            vn: "Đăng nhập"
+        }
+    }
+]);
 
 export class WithMainNav extends React.Component {
     constructor(props) {
@@ -15,6 +25,8 @@ export class WithMainNav extends React.Component {
 
     render() {
         let curTheme = themeServices.getTheme();
+        let curLang = langServices.getLang();
+        let translateField = initLang(curLang);
         return (
             <div className="with-nav-window">
                 <div className={`main-nav ${curTheme}`}>
@@ -27,7 +39,7 @@ export class WithMainNav extends React.Component {
                             <div className="flex-wrapper right-side">
                                 <div className="login-btn">
                                     <button>
-                                        Login
+                                        {translateField("btnContent")}
                                     </button>
                                 </div>
                                 <div className="separate"/>

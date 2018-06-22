@@ -1,0 +1,33 @@
+.welcome-board {
+  text-align center
+  margin-top 170px
+  .big-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight bold
+    color white
+    font-size xl - 0.4rem
+  }
+  .title-sub {
+    margin-top 40px
+    font-size md - 0.3rem
+    font-weight 600
+    font-family: 'Open Sans', sans-serif;
+    color deepgrey
+  }
+  &.dark-light{
+    .big-title {
+      color white
+    }
+    .title-sub {
+      color deepgrey
+    }
+  }
+  &.sky{
+    .big-title {
+      color #1a1a1a
+    }
+    .title-sub {
+      color lighten(#1a1a1a, 40%)
+    }
+  }
+}

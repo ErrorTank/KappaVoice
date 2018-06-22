@@ -10,7 +10,7 @@ export class LanguageFetcher extends KappaComponent {
             list: []
         };
         this.fetchStateData(props.langs).then(list => {
-            let onlyFlagAndName = list.map(({flag, languages}) => ({flag, lang: languages[0].nativeName}));
+            let onlyFlagAndName = list.map(({flag, languages}, i) => ({flag, lang: languages[0].nativeName, id: props.langs[i]}));
             this.setState({list: onlyFlagAndName});
         })
     };

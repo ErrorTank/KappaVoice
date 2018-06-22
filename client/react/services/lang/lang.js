@@ -1,17 +1,19 @@
-export const allThemes = ["dark-light", "sky"];
+export const allLangs = ["vn", "us"];
+
+
 
 let listeners = [];
 
-let curTheme = () => localStorage.getItem("theme") || allThemes[0];
+let curLang = () => localStorage.getItem("lang") || allLangs[0];
 
-let isSupport = (type) => allThemes.includes(type);
+let isSupport = (type) => allLangs.includes(type);
 
-export const themeServices = {
-    getTheme: () => curTheme(),
-    setTheme: (type) => {
+export const langServices = {
+    getLang: () => curLang(),
+    setLang: (type) => {
         if(isSupport(type)){
-            localStorage.setItem("theme", type);
-            listeners.forEach(fn => fn(curTheme()));
+            localStorage.setItem("lang", type);
+            listeners.forEach(fn => fn(curLang()));
         }
     },
     onChange: (func) => {

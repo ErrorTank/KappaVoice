@@ -3,6 +3,7 @@ import {LanguageFetcher} from "../../../common/language-fetcher/language-fetcher
 import {themeServices} from "../../../services/theme/theme-services";
 import {ShowIcon} from "../show-icon/show-icon";
 import {AutoComplete} from "../../../common/autocomplete/autocomplete";
+import {langServices} from "../../../services/lang/lang";
 
 
 
@@ -15,6 +16,7 @@ export class LanguagePicker extends React.Component {
     };
 
     handlePick = lang => {
+        langServices.setLang(lang.id);
         this.setState({show: false});
     };
 
@@ -26,7 +28,7 @@ export class LanguagePicker extends React.Component {
             onMouseLeave: () => show && this.setState({show: false}),
         };
         let curTheme = themeServices.getTheme();
-
+        let curLang = langServices.getLang();
         return (
             <div className={`lgp-wrap ${curTheme} picker-wrap`}
                  {...onChangeEvent}
@@ -42,7 +44,7 @@ export class LanguagePicker extends React.Component {
                             list={list}
                             className="language-picker picker-list"
                             render={lang => (
-                                <div className="each-lang picker-item"
+                                <div className={`each-lang picker-item ${curLang === lang.id ? "active" : ""}`}
                                      onClick={() => this.handlePick(lang)}
                                 >
                                     <div className="lang-part flag">

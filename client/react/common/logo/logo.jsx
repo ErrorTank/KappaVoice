@@ -17,7 +17,7 @@ export class Logo extends React.Component{
                 className="disable-a-behavior logo-wrap"
             >
                 <div className={`logo logo-${size} ${curTheme}`}>
-                    <img src={`./assets/img/creepy-ghost-${curTheme}.png`}/>
+                    <img src={`./assets/img/creepy-ghost-${curTheme}.svg`}/>
                     <span className={`brand-name`}>{brandName ? "KappaVoice" : ""}</span>
                 </div>
             </Link>

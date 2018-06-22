@@ -1,0 +1,70 @@
+.welcome-actions {
+  .username-form{
+    position relative
+    margin auto
+    margin-top 50px
+    height 45px
+    scaleHorizontal(250px, 400px, 0.2s)
+    .username-input{
+      padding 0 20px
+      font-size sm - 0.2rem
+      padding-right 65px
+      height 100%
+      border 1px solid grey
+      width 100%
+    }
+    .register-username{
+      width 60px
+      text-align center
+      position absolute
+      right 3px
+      top 3px
+      height 39px
+      setTransition(0.1s)
+      .icon{
+        color white
+        font-weight bold
+      }
+    }
+  }
+  .use-app {
+
+    margin-top 50px
+    font-weight 550
+    font-size sm + 0.1rem
+    letter-spacing 0.5px
+    padding 12px 32px
+    setTransition(0.2s)
+
+  }
+  &.dark-light{
+    .use-app{
+      background-color favor
+      color white
+      &:hover {
+        background-color darken(favor, 20%)
+      }
+    }
+    .register-username{
+        background-color favor
+        &:hover{
+          background-color darken(favor, 20%)
+        }
+    }
+  }
+  &.sky{
+    .use-app{
+      background-color primary
+      color white
+      &:hover {
+        background-color darken(primary, 20%)
+      }
+    }
+    .register-username{
+      background-color primary
+      &:hover{
+        background-color darken(primary, 20%)
+      }
+    }
+  }
+}
