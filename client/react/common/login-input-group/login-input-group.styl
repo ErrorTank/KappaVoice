@@ -1,0 +1,49 @@
+.app-input-group{
+
+  padding-top 30px
+
+  .main{
+    position relative
+    input{
+      outline none
+      border-radius 5px
+      border 1px solid
+      padding 8px 15px
+      width 100%
+      transition all 0.3s ease
+      font-size sm
+    }
+    .error-notify{
+      font-size sm + 0.5rem
+      color danger
+      position absolute
+      top 50%
+      transform translateY(-50%)
+      right - sm - 1.5px
+    }
+    .placeholder{
+      position absolute
+      font-size sm
+      left 15px
+
+      top 50%
+      transform translateY(-50%)
+      transition all 0.3s ease
+    }
+    &.isFocus{
+      input{
+        border-color #1a1a1a
+      }
+      .placeholder{
+        top - sm
+        left 0
+        color #1a1a1a
+        font-size sm - 0.3rem
+        font-weight 550
+      }
+    }
+  }
+
+
+
+}

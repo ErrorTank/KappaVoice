@@ -9,16 +9,15 @@ export class Logo extends React.Component{
         };
     };
     render(){
-        let {brandName, size} = this.props;
-        let curTheme = themeServices.getTheme();
+        let {className, src, brandName} = this.props;
         return(
             <Link
                 to="/"
-                className="disable-a-behavior logo-wrap"
+                className="disable-a-behavior logo"
             >
-                <div className={`logo logo-${size} ${curTheme}`}>
-                    <img src={`./assets/img/creepy-ghost-${curTheme}.svg`}/>
-                    <span className={`brand-name`}>{brandName ? "KappaVoice" : ""}</span>
+                <div className={`${className}`}>
+                    <img src={src}/>
+                    <span className={`brand-name`}>{brandName}</span>
                 </div>
             </Link>
         );

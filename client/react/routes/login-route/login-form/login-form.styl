@@ -1,0 +1,47 @@
+.login-form {
+  width 450px
+  border-radius 4px
+  margin auto
+  &.dark-light {
+    background-color white
+    .sign-in-form {
+      .form-title {
+        color #1a1a1a
+      }
+      .form-body {
+        .forgot-password {
+          p{
+            color lighten(#1a1a1a, 25%)
+            &:hover {
+              color #1a1a1a
+            }
+          }
+
+        }
+      }
+      .form-footer {
+        button{
+          background-color #1a1a1a
+          color white
+          &:hover{
+            background-color lighten(#1a1a1a, 10%)
+          }
+        }
+        .register{
+          color #1a1a1a
+          span{
+            color lighten(#1a1a1a, 25%)
+            &:hover{
+              color #1a1a1a
+            }
+          }
+        }
+      }
+    }
+  }
+  &.sky {
+    background-color primary
+  }
+  margin-top 50px
+
+}

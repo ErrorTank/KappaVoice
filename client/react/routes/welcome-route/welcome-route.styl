@@ -1,19 +1,32 @@
-.welcome-route{
-  .moving-ghost{
-    height 200px
-  }
-  .welcome-route-content{
+.welcome-route {
+  position absolute
+  top 0
+  left 0
+  width 100vw
+  height 100vh
+  .wrapper{
     position relative
-    height 100vh
-
-    &.sky{
-      background-color rgba(white, 0.8)
+    height 100%
+    .moving-ghost {
+      height 200px
     }
-    &.dark-light{
-      background-color rgba(#1d1d1d, 0.8)
+    .hide-figure{
+      height 100%
+      &.sky {
+        background-color rgba(white, 0.8)
+      }
+      &.dark-light {
+        background-color rgba(#1d1d1d, 0.8)
+      }
+      .welcome-route-content {
+        padding-top 170px
+
+
+      }
     }
 
   }
+
 }
 
 

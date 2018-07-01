@@ -1,0 +1,75 @@
+.sign-in-form{
+  padding 30px 50px
+  .form-title{
+    text-align center
+    .t{
+      font-weight 550
+      font-size md + 0.3rem
+    }
+    .s{
+      font-size md - 0.2rem
+    }
+  }
+  .form-body{
+    margin-top 10px
+    .app-input-group{
+      &.dark-light{
+        .main{
+          input{
+            border-color darken(grey, 10%)
+          }
+          .placeholder{
+            color deepgrey
+          }
+          &.isFocus{
+            input{
+              border-color #1a1a1a
+            }
+            .placeholder{
+              color #1a1a1a
+            }
+          }
+        }
+
+      }
+
+
+
+    }
+    .forgot-password{
+
+      font-size sm - 0.2rem
+      text-align left
+      font-weight 550
+
+      margin-top 5px
+      p{
+        display inline-block
+        cursor pointer
+      }
+
+    }
+
+  }
+  .form-footer{
+    .sign-in-btn{
+      font-size sm - 0.1rem
+      font-weight 550
+      margin-top 25px
+      transition all 0.2s ease
+    }
+    .register{
+      font-size sm - 0.4rem
+      margin-top 6px
+      text-align left
+      letter-spacing 0.5px
+      span{
+        margin-left 4px
+        font-weight bold
+        font-size sm - 0.3rem
+        cursor pointer
+      }
+    }
+  }
+}
+

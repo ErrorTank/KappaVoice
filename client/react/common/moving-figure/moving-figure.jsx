@@ -23,11 +23,16 @@ export const MovingFigure = withMouse(
 
         UNSAFE_componentWillReceiveProps({mouse}) {
             if (this && (mouse.x !== this.props.mouse.x || mouse.y !== this.props.mouse.y)) {
-                if (this.interval) {
-                    clearInterval(this.interval);
-                }
+                this.clearItv();
                 this.setState({show: false});
                 this.appear(1200);
+            }
+        };
+
+        clearItv = () =>{
+            if (this.interval) {
+                clearInterval(this.interval);
+                this.interval = null;
             }
         };
 
@@ -54,12 +59,15 @@ export const MovingFigure = withMouse(
             this.appear(1200);
         };
 
+        componentWillUnmount(){
+            this.clearItv();
+        }
+
         render() {
-            let {renderFigure, children} = this.props;
+            let {renderFigure, children, className} = this.props;
             let {mouse, show} = this.state;
-            console.log(mouse);
             return (
-                <div className="moving-figure"
+                <div className={`moving-figure ${className}`}
                      ref={this.wrapper}
                 >
                     <TransitionGroup
@@ -73,7 +81,8 @@ export const MovingFigure = withMouse(
                                 <div className="figure"
                                      style={{
                                          top: mouse.y + "px",
-                                         left: mouse.x + "px"
+                                         left: mouse.x + "px",
+
                                      }}
                                 >
                                     {renderFigure()}
