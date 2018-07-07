@@ -9,15 +9,6 @@ export class LoginForm extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            signIn: {
-                email: "",
-                password: ""
-            },
-            signUp: {
-                email: "",
-                userName: "",
-                password: ""
-            }
         };
     };
     render(){
@@ -33,7 +24,7 @@ export class LoginForm extends React.Component{
                 name: "password",
                 lang: {
                     us: "Password",
-                    vn: "Password"
+                    vn: "Mật khẩu"
                 }
             }, {
                 name: "userName",
@@ -41,34 +32,18 @@ export class LoginForm extends React.Component{
                     us: "Username",
                     vn: "Tên hiển thị"
                 }
+            }, {
+                name: "confirm",
+                lang: {
+                    us: "Confirm password",
+                    vn: "Nhập lại mật khẩu"
+                }
             }
         ]);
-        let {signIn, signUp} = this.state;
         let curTheme = themeServices.getTheme();
         return(
             <div className={`login-form ${curTheme}`}>
-                <Route
-                    path="/sign-in"
-                    render={props => (
-                        <SignIn
-                            {...props}
-                            onChange={signIn => this.setState({signIn})}
-                            value={signIn}
-                            placeholders={formPlaceholder}
-                        />
-                    )}
-                />
-                <Route
-                    path="/sign-up"
-                    render={props => (
-                        <SignUp
-                            {...props}
-                            onChange={signUp => this.setState({signUp})}
-                            value={signUp}
-                            placeholder={formPlaceholder}
-                        />
-                    )}
-                />
+                {this.props.render(formPlaceholder)}
             </div>
         );
     }

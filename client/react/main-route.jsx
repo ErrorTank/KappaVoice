@@ -11,6 +11,8 @@ import {LoginPage} from "./routes/login-route/login-route";
 import {NotFoundPage} from "./routes/not-found-page/not-found-page";
 import {customHistory} from "./services/history";
 import {ToolTipRegistry} from "./common/tool-tip/tool-tip-registry";
+import {SignIn} from "./routes/login-route/login-form/sign-in";
+import {SignUp} from "./routes/login-route/login-form/sign-up";
 
 export class MainRoute extends KappaComponent {
     constructor(props) {
@@ -32,7 +34,8 @@ export class MainRoute extends KappaComponent {
                         >
                             <Switch>
                                 <Route exact path="/" component={WelcomeRoute}/>
-                                <Route exact path="/sign-in" component={LoginPage}/>
+                                <Route exact path="/sign-in" component={SignIn}/>
+                                <Route exact path="/sign-up" component={SignUp}/>
                                 <Route component={NotFoundPage}/>
                             </Switch>
                         </Router>

@@ -27,9 +27,24 @@ export class LoginPage extends React.Component{
                     />
                 </div>
                 <div className="login-form">
-                    <LoginForm/>
+                    <LoginForm
+                        render={this.props.children}
+                    />
                 </div>
             </div>
         );
     }
 }
+
+const loginToolTip = (text) => (
+    <div className="login-tooltip">
+        {text}
+    </div>
+);
+
+export const renderTooltipIfError = (err) => {
+    if(!err){
+        return null;
+    }
+    return loginToolTip(err.name);
+};

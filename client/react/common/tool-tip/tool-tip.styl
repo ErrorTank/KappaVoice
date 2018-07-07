@@ -1,8 +1,19 @@
 .app-tool-tip{
   position absolute
-  width 100px
-  height 50px
-  background-color red
   z-index 20
-  transform translate(50%, 50%)
+  transition all 0.2s ease
+  text-align center
+  transform translate(15%, -50%)
+  border-radius 3px
+  overflow hidden
+  &.not-moving::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
 }

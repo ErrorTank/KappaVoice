@@ -5,13 +5,13 @@ export class ToolTipRegistry extends React.Component {
         super(props);
 
         this.defaultState = {
-            mouse: null,
-            render: null
+            position: null,
+            content: null
         };
         this.state = this.defaultState;
 
-        toolTipRegistry.show = ({render, pos}) => {
-            this.setState({render, mouse: pos});
+        toolTipRegistry.show = ({content, position}) => {
+            this.setState({content, position});
             return {
                 close: () => {
                     this.closeTooltip();
@@ -20,28 +20,25 @@ export class ToolTipRegistry extends React.Component {
         }
     };
 
-
-
     closeTooltip = () => {
         this.setState(this.defaultState);
-        console.log("Dadas")
     };
 
 
 
     render() {
-        let {mouse, render} = this.state;
-        if(!mouse){
+        let {position, content} = this.state;
+        if(!position){
             return null;
         }
         return (
             <div className="app-tool-tip"
                  style={{
-                     top: mouse.y,
-                     left: mouse.x
+                     top: position.y,
+                     left: position.x
                  }}
             >
-                {render}
+                {content}
             </div>
         )
     }
